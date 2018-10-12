@@ -1,0 +1,3 @@
+rootProject.name = 'TravelDiary'
+
+include ':app'
