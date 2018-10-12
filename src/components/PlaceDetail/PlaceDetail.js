@@ -16,21 +16,17 @@ const PlaceDetail = props => {
     
     let text = "blabla";
     return (
-        /*<Modal visible={props.selectedPlace !== null} onRequestClose={() => {this.visible(false)}}>
-          /*  <View style={styles.modalContainer}>
-                {modalContent}*/
+        <Modal visible={props.selectedPlace !== null} onRequestClose={() => {this.visible(false)}}>
+            <View style={styles.modalContainer}>
+                {modalContent}
                 <View>
                     <Button title="Delete" onPress={() => {Alert.alert('You tapped the button!');}}/>
-                    <Button title="Close" onPress={() => { Alert.alert('You tapped the button!');}}/>
+                    <Button title="Close" onPress={() => {Alert.alert('You tapped the button!');}}/>
                     <Text>{text}</Text>
-                    <Text>{modalContent}</Text>
                 </View>   
-        
-          /*  </View>*/
-        
-       /* </Modal>*/
-        
-                
+            </View>
+        </Modal>
+            
         )
     };
 
