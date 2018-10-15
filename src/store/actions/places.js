@@ -10,9 +10,10 @@ export const addPlace = (placeName) => {
 };
 
 //no argument needed
-export const deletePlace = () => {
+export const deletePlace = (key) => {
     return {
-        type: DELETE_PLACE  
+        type: DELETE_PLACE,
+        placeKey: key
     };
 };
 
