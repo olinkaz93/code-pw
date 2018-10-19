@@ -1,33 +1,56 @@
 import React, { Component } from 'react';
-import { View, Text, Dimensions, StyleSheet } from 'react-native';
+import { View, Text, Dimensions, StyleSheet, TouchableOpacity, Image } from 'react-native';
+import logoMiniImage from '../../assets/logo-mini-cir.png';
+
+import Icon from 'react-native-vector-icons/Ionicons';
 
 class SideDrawer extends Component {
     render () {
         return (
-            <View style={styles.bigWindow}>
-                <View style={styles.container}>
-                    <Text>Side Drawer</Text>
-                    <Text>Hakuna MATATA</Text>
-                    <Text>Hakuna MATATA</Text>
-                    <Text>Hakuna MATATA</Text>
-                    <Text>Hakuna MATATA</Text>
-                    <Text>Hakuna MATATA</Text>
-                </View>
+            <View style={[styles.container, {width: (Dimensions.get('window').width)*0.5}]}>
+                <TouchableOpacity>
+                    <View style={styles.drawerMenu}>
+                        <Image source={logoMiniImage} style={styles.logoMini}/>
+                    </View>
+                    <View style={styles.drawerMenu}><Text>TRAVEL DIARY</Text></View>
+                                
+                    <View style={styles.drawerItem}>
+                        <Icon name="md-power" size={30} color="#ff6076" style={styles.drawerIcon} />
+                        <Text style={styles.drawerText}>Sign out</Text>
+                    </View>
+                </TouchableOpacity>
             </View>
         );
     }
 }
 
 const styles = StyleSheet.create({
-    bigWindow: {
-        flex: 1,
-        width: "100%"
-    },
     container: {
-        paddingTop: 22,
-        backgroundColor: "blue",
-        flex: 1,
-        width: "80%"
+        backgroundColor: "white",
+        flex: 1        
+    },
+    mainText:{
+        textAlign: "right",
+        fontSize: 25,
+        marginBottom: 10
+    },
+    logoMini: {
+        width: 50,
+        height: 50
+    },
+    drawerMenu: {
+        alignItems: "center",
+    },
+    drawerItem: {
+        alignItems: "center",
+        flexDirection: "row"
+    },
+    drawerIcon: {
+        marginRight: 10,
+        marginLeft: 10
+    },
+    drawerText: {
+        fontSize: 20
     }
 });
 

@@ -43,8 +43,7 @@ const startTabs = () => {
             drawer: {
                 left: {
                     screen: "travel-diary.SideDrawer",
-                    passProps: {},
-                    fixedWidth: 100
+                    passProps: {}
                 }
             
             }
