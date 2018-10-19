@@ -7,7 +7,7 @@ const placeInput = props => (
     <DefaultInput
         placeholder="Travel Name"
         value={props.placeName}
-        onChange={props.onChangeText} />
+        onChangeText={props.onChangeText} />
 ); 
 
 

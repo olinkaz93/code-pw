@@ -39,6 +39,9 @@ class SharePlaceScreen extends Component {
         if (this.state.placeName.trim() !== "") {
             this.props.onAddPlace(this.state.placeName);
         }
+        else {
+            alert("NO DATA!");
+        }
         
     }
     
