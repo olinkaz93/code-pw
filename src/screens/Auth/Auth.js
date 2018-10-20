@@ -31,7 +31,7 @@ class AuthScreen extends Component {
             
         return (
             <ImageBackground source={backgroundImage} style={styles.backgroundImage}>
-                <View style={styles.container}>
+                <View style={[styles.container, this.state.viewMode === "portrait" ? styles.portraitContainer : styles.landscapeContainer]}>
                     <MainButton color="#f6f99f" onPress={() => alert("hello")}>Log in</MainButton>
                     <View style={styles.inputContainer}>
                         <DefaultInput placeholder="Your e-mail" style={styles.input}  />
@@ -65,11 +65,16 @@ class AuthScreen extends Component {
 
 const styles = StyleSheet.create({
     container: {
-        paddingTop: Dimensions.get('window').height > 500 ? "15%" : "2%",
         flex: 1,
         justifyContent: "center",
         alignItems: "center"
     },
+    portraitContainer: {
+        paddingTop: "15%"
+    },
+    landscapeContainer: {
+        paddingTop: "2%"
+    },    
     inputContainer: {
         width: "80%"
     },
