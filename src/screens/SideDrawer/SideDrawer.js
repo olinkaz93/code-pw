@@ -8,12 +8,12 @@ class SideDrawer extends Component {
     render () {
         return (
             <View style={[styles.container, {width: (Dimensions.get('window').width)*0.5}]}>
-                <TouchableOpacity>
-                    <View style={styles.drawerMenu}>
-                        <Image source={logoMiniImage} style={styles.logoMini}/>
-                    </View>
-                    <View style={styles.drawerMenu}><Text>TRAVEL DIARY</Text></View>
-                                
+                <View style={styles.drawerItem}>
+                    <Image source={logoMiniImage} style={styles.logoMini}/>
+                
+                    <Text style={styles.mainText}>{`TRAVEL\nDIARY`}</Text>
+                </View>
+                <TouchableOpacity>                
                     <View style={styles.drawerItem}>
                         <Icon name="md-power" size={30} color="#ff6076" style={styles.drawerIcon} />
                         <Text style={styles.drawerText}>Sign out</Text>
@@ -30,13 +30,15 @@ const styles = StyleSheet.create({
         flex: 1        
     },
     mainText:{
-        textAlign: "right",
-        fontSize: 25,
+        marginTop: 8,
+        textAlign: "center",
+        fontSize: 22,
         marginBottom: 10
     },
     logoMini: {
         width: 50,
-        height: 50
+        height: 50,
+        marginLeft: 5
     },
     drawerMenu: {
         alignItems: "center",

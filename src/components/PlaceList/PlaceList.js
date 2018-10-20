@@ -18,6 +18,7 @@ const PlaceList = props => {
 const styles = StyleSheet.create({
     listContainer: {
     width: "100%",
+    backgroundColor: "yellow"
     //padding: 10
     }  
 });
