@@ -7,12 +7,19 @@ import { deletePlace } from '../../store/actions/index';
 
 class PlaceDetail extends Component {
     state = {
-        viewMode: "portrait"
+        viewMode: Dimensions.get('window').height > 500 ? "portrait" : "landscape"
     }
 
     constructor(props) {
         super(props);
-        Dimensions.addEventListener("change", this.updateStyles);
+    }
+
+    componentDidMount() {
+        Dimensions.addEventListener("change", this.updateStyles)
+    }
+    
+    componentWillUnmount() {
+        Dimensions.removeEventListener("change", this.updateStyles)
     }
     
     updateStyles = dims => {
