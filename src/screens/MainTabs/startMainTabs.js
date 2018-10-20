@@ -40,6 +40,10 @@ const startTabs = () => {
                     }
                 }
             ],
+            
+            appStyle: {
+                tabBarSelectedButtonColor: "#ff6076"
+            },
             drawer: {
                 left: {
                     screen: "travel-diary.SideDrawer",
