@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, Button, TextInput, StyleSheet, ImageBackground, Dimensions } from 'react-native';
+import { View, Text, Button, TextInput, StyleSheet, ImageBackground, Dimensions, KeyboardAvoidingView, Keyboard, TouchableWithoutFeedback  } from 'react-native';
 
 import { connect } from 'react-redux';
 
@@ -139,7 +139,7 @@ class AuthScreen extends Component {
             
         return (
             <ImageBackground source={backgroundImage} style={styles.backgroundImage}>
-                <View style={[styles.container, this.state.viewMode === "portrait" ? styles.portraitContainer : styles.landscapeContainer]}>
+                <KeyboardAvoidingView style={[styles.container, this.state.viewMode === "portrait" ? styles.portraitContainer : styles.landscapeContainer]} behavior="padding">
                     <MainButton color="#ff6076" onPress={this.switchAuthModeHandler}>{this.state.authMode === 'login' ? "Sign up!" : "Login"}</MainButton>
                     <View style={styles.inputContainer}>
                         <DefaultInput placeholder="Your e-mail" style={styles.input}
@@ -177,7 +177,7 @@ class AuthScreen extends Component {
                         !this.state.controls.email.valid ||
                         !this.state.controls.password.valid}
                     >Submit</MainButton>
-                </View>
+                </KeyboardAvoidingView>
             </ImageBackground>
         );
     }
