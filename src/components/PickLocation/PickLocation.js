@@ -32,7 +32,7 @@ render () {
                 {marker}
             </MapView>
             <View style={styles.button}>
-                <Button title="Get location" onPress={() => alert('mapki sa do dupy')} style={styles.button}/>
+                <Button title="Get location" onPress={() => alert('dupa jasia')} style={styles.button}/>
             </View>
         </View>
     );
