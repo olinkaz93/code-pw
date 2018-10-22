@@ -22,7 +22,7 @@ pickLocationHandler = event => {
             focusedLocation: {
                 ...prevState.focusedLocation,
                 latitude: coords.latitude,
-                longitutde: coords.longitutde
+                longitude: coords.longitude
             },
             locationChosen: true
         };

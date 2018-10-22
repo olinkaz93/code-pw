@@ -23,7 +23,7 @@
       <activity android:name="com.facebook.react.devsupport.DevSettingsActivity" />
         <meta-data
      android:name="com.google.android.geo.API_KEY"
-     android:value="DUPA_JASIA_DALAM_DUPY_NIE_STRZELAJ_SE_W_LEB_CHYBA_ZE_WODNYM_PISTOLETEM_MR_MAYO_AKA_KOZAK"/>
+     android:value="MAM_DOSC"/>
     </application>
 
 </manifest>
