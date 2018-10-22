@@ -1,19 +1,42 @@
 import React, { Component } from 'react';
-import { View, Button, StyleSheet, Text } from 'react-native';
+import { View, Button, StyleSheet, Text, Dimensions } from 'react-native';
+import MapView from 'react-native-maps';
 
 class PickLocation extends Component {
-    render () {
-        return(
-            <View style={styles.container}>
-                <View>
-                    <Text style={styles.placeholder}>Map</Text>
-                </View>
-                <View style={styles.button}>
-                    <Button title="Get location" onPress={() => alert("Hello!")} style={styles.button}/>
-                </View>
-            </View>
-        );
+    state = {
+        focusedLocation: {
+            latitude: 37.7900352,
+            longitude: -122.4013726,
+            latitudeDelta: 0.0122,
+            longitudeDelta:
+                Dimensions.get('window').width / Dimensions.get('window').height *
+                0.0122
+        },
+        locationChosen: false
     }
+
+    
+render () {
+    let marker = null;
+    if (this.state.locationChosen) {
+        marker = <MapView.Marker coordinate={this.state.focusedLocation}/>
+    }
+        
+    return(
+        <View style={styles.container}>
+            <MapView
+                initialRegion={this.state.focusedLocation}
+                style={styles.map}
+                onPress={this.pickLocationHandler}
+                ref={ref => this.map = ref}>
+                {marker}
+            </MapView>
+            <View style={styles.button}>
+                <Button title="Get location" onPress={() => alert('mapki sa do dupy')} style={styles.button}/>
+            </View>
+        </View>
+    );
+}
 }
 
 const styles = StyleSheet.create({
@@ -24,12 +47,9 @@ const styles = StyleSheet.create({
     button: {
         margin: 5
     },
-    placeholder: {
-        backgroundColor: "grey",
-        borderWidth: 1,
-        borderColor: "#eee",
-        width: "80%",
-        height: 120
+    map: {
+        width: "100%",
+        height: 250
     }
 });
 
