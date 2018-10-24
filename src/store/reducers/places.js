@@ -14,7 +14,8 @@ const reducer = (state = initialState, action) => {
                 places: state.places.concat({key: Math.random().toString(), name: action.placeName, image:
                  {
                     uri: "https://pbs.twimg.com/profile_images/575890671350874112/lLhuNEZl_400x400.png",
-                 }
+                 },
+                    location: action.location
                 })   
             
             };
