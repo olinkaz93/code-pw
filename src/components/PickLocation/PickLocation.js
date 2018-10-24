@@ -30,7 +30,7 @@ pickLocationHandler = event => {
 }
 
 getLocationHandler = () => {
-    navigator.geolocation.getCurrentPosition(pos => {
+    navigator.geolocation.watchPosition(pos => {
         const coordsEvent = {
             nativeEvent: {
                 coordinate: {
