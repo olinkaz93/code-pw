@@ -29,6 +29,17 @@ pickLocationHandler = event => {
     });
 }
 
+getLocationHandler = () => {
+    navigator.geolocation.getCurrentPosition(pos => {
+        
+    },
+
+    err => {
+        console.log(err);
+        alert(err);
+        alert("Fetching the position failed");
+    })
+}
     
 render () {
     let marker = null;
