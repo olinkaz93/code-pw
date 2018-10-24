@@ -31,7 +31,16 @@ pickLocationHandler = event => {
 
 getLocationHandler = () => {
     navigator.geolocation.getCurrentPosition(pos => {
-        
+        const coordsEvent = {
+            nativeEvent: {
+                coordinate: {
+                    latitude: pos.coords.latitude,
+                    longitutde: pos.coords.longitude
+                }
+            }
+        };
+        alert("succes!");
+        this.pickLocationHandler(coordsEvent);
     },
 
     err => {
@@ -58,7 +67,7 @@ render () {
                 {marker}
             </MapView>
             <View style={styles.button}>
-                <Button title="Get location" onPress={() => alert('dupa jasia')} style={styles.button}/>
+                <Button title="Get location" onPress={this.getLocationHandler} style={styles.button}/>
             </View>
         </View>
     );
