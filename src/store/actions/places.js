@@ -2,13 +2,21 @@ import { ADD_PLACE, DELETE_PLACE } from './actionTypes'
 
 //I store here my places related actions
 export const addPlace = (placeName, location, image) => {
-  return {
-      //thi action should have a payload, as this will be consued later by the reducer so he neeeds to know this value and propery to hae access in redcucer
-      type: ADD_PLACE,
-      placeName: placeName,
-      location: location,
-      image: image
-  };
+  return dispatch => {
+      const placeData = {
+          name: placeName,
+          location: location
+      };
+      fetch("https://traveldiaryokno-220216.firebaseio.com/places.json", {
+          method: "POST",
+          body: JSON.stringify(placeData)
+      })
+      .catch(err => console.log(err))
+      .then(res => res.json())
+      .then(parsedRes => {
+          console.log(parsedRes);
+      });
+  };  
 };
 
 //no argument needed
