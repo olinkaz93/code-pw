@@ -11,9 +11,10 @@ const reducer = (state = initialState, action) => {
             return {
                 //I copy last state
                 ...state,
-                places: state.places.concat({key: Math.random().toString(), name: action.placeName, image:
+                places: state.places.concat({key: Math.random().toString(), name: action.placeName,
+                image:
                  {
-                    uri: "https://pbs.twimg.com/profile_images/575890671350874112/lLhuNEZl_400x400.png",
+                    uri: action.image.uri
                  },
                     location: action.location
                 })   
