@@ -3,10 +3,12 @@ import {createStore, combineReducers, compose, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 
 import placesReducer from './reducers/places';
+import uiReducer from './reducers/ui';
 
 //I create root reducer where I map any key of my choice to reducer
 const rootReducer = combineReducers({
     places: placesReducer,
+    ui: uiReducer
 });
 
 let composeEnhancers = compose;
