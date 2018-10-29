@@ -4,11 +4,13 @@ import thunk from 'redux-thunk';
 
 import placesReducer from './reducers/places';
 import uiReducer from './reducers/ui';
+import authReducer from './reducers/auth';
 
 //I create root reducer where I map any key of my choice to reducer
 const rootReducer = combineReducers({
     places: placesReducer,
-    ui: uiReducer
+    ui: uiReducer,
+    auth: authReducer
 });
 
 let composeEnhancers = compose;
