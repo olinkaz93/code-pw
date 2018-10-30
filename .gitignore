@@ -54,3 +54,9 @@ buck-out/
 
 # Bundle artifact
 *.jsbundle
+
+# Functions
+functions/traveldiary.json 
+
+# API Key
+android/app/src/main/AndroidManifest.xml
