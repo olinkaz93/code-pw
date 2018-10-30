@@ -15,10 +15,10 @@ Navigation.registerComponent("travel-diary.AuthScreen", () => AuthScreen, store,
 Navigation.registerComponent("travel-diary.SharePlaceScreen", () => SharePlaceScreen, store, Provider);
 Navigation.registerComponent("travel-diary.FindPlaceScreen", () => FindPlaceScreen, store, Provider);
 Navigation.registerComponent("travel-diary.PlaceDetailScreen", () => PlaceDetailScreen, store, Provider);
-Navigation.registerComponent("travel-diary.SideDrawer", () => SideDrawer);
+Navigation.registerComponent("travel-diary.SideDrawer", () => SideDrawer, store, Provider);
 
 // Start a App
-Navigation.startSingleScreenApp({
+export default () => Navigation.startSingleScreenApp({
     screen: {
         screen: "travel-diary.AuthScreen",
         title: "Login"

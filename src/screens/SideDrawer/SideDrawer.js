@@ -3,6 +3,8 @@ import { View, Text, Dimensions, StyleSheet, TouchableOpacity, Image } from 'rea
 import logoMiniImage from '../../assets/logo-mini-cir.png';
 
 import Icon from 'react-native-vector-icons/Ionicons';
+import { connect } from 'react-redux';
+import { authLogout } from '../../store/actions/index';
 
 class SideDrawer extends Component {
     render () {
@@ -13,7 +15,7 @@ class SideDrawer extends Component {
                 
                     <Text style={styles.mainText}>{`TRAVEL\nDIARY`}</Text>
                 </View>
-                <TouchableOpacity>                
+                <TouchableOpacity onPress={this.props.onLogout}>                
                     <View style={styles.drawerItem}>
                         <Icon name="md-power" size={30} color="#ff6076" style={styles.drawerIcon} />
                         <Text style={styles.drawerText}>Sign out</Text>
@@ -56,4 +58,10 @@ const styles = StyleSheet.create({
     }
 });
 
-export default SideDrawer;
+const mapDispatchToProps = dispatch => {
+    return {
+        onLogout: () => dispatch(authLogout())
+    };
+};
+
+export default connect(null, mapDispatchToProps)(SideDrawer);
