@@ -71,7 +71,7 @@ render () {
         <View style={styles.container}>
             <MapView
                 initialRegion={this.state.focusedLocation}
-                region={!this.state.locationChosen ? this.state.focusedLocation : null}
+                region= {this.state.focusedLocation}
                 style={styles.map}
                 onPress={this.pickLocationHandler}
                 ref={ref => this.map = ref}>
