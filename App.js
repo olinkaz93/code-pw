@@ -18,7 +18,7 @@ Navigation.registerComponent("travel-diary.PlaceDetailScreen", () => PlaceDetail
 Navigation.registerComponent("travel-diary.SideDrawer", () => SideDrawer, store, Provider);
 
 // Start a App
-export default () => Navigation.startSingleScreenApp({
+Navigation.startSingleScreenApp({
     screen: {
         screen: "travel-diary.AuthScreen",
         title: "Login"
